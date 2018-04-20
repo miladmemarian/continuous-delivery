@@ -5,7 +5,18 @@ const request = require("request");
 
 describe("App Tests", () => {
   const app = createApp();
-  app.listen(3000, () => "Listening on 3000");
+
+  before(done => {
+    server = app.listen(3000, () => {
+      done();
+    });
+  });
+
+  after(done => {
+    server.close(() => {
+      done();
+    });
+  });
 
   describe("Get /", () => {
     it("Responds with project name and description", done => {
