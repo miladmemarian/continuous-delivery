@@ -19,12 +19,10 @@ describe("App Tests", () => {
   });
 
   describe("Get /", () => {
-    it("Responds with project name and description", done => {
+    it("Responds with App link", done => {
       request("http://localhost:3000", (error, response, body) => {
         expect(body).to.equal(
-          "continuous-delivery" +
-            " " +
-            "A practice repository for testing and deployment."
+          "https://milad-continuous-delivery.herokuapp.com"
         );
         done();
       });

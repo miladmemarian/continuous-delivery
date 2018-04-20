@@ -4,11 +4,7 @@ module.exports = function createApp() {
   const app = express();
 
   app.get("/", (req, res) => {
-    res.send(
-      "continuous-delivery" +
-        " " +
-        "A practice repository for testing and deployment."
-    );
+    res.send("https://milad-continuous-delivery.herokuapp.com");
   });
   return app;
 };
